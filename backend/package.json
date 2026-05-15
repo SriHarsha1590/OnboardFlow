@@ -1,0 +1,32 @@
+{
+  "name": "onboardflow-backend",
+  "version": "1.0.0",
+  "description": "Temporal-powered backend for employee onboarding",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "concurrently \"node --watch src/index.js\" \"node --watch src/workers/onboardingWorker.js\"",
+    "start": "node src/index.js",
+    "start:worker": "node src/workers/onboardingWorker.js",
+    "db:migrate": "node src/db/migrate.js"
+  },
+  "dependencies": {
+    "@temporalio/activity": "^1.10.0",
+    "@temporalio/client": "^1.10.0",
+    "@temporalio/worker": "^1.10.0",
+    "@temporalio/workflow": "^1.10.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.0",
+    "nodemailer": "^8.0.5",
+    "openai": "^6.34.0",
+    "pg": "^8.12.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
